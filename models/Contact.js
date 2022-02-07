@@ -1,4 +1,4 @@
-const { Model, DataTypes, INTEGER } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connections');
 
@@ -40,24 +40,24 @@ Contact.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: '',
-        key: '',
+        model: 'status',
+        key: 'id',
       },
     },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: '',
-        key: '',
+        model: 'user',
+        key: 'id',
       },
     },
     lead_source_id: {
       type: DataTypes.STRING,
       allowNull: false,
       references: {
-        model: '',
-        key: '',
+        model: 'lead_source',
+        key: 'id',
       },
     },
   },
