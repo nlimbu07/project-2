@@ -18,6 +18,7 @@ Lead_Source.init(
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'lead_source',
