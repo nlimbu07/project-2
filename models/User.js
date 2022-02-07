@@ -6,7 +6,7 @@ class User extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
-}
+};
 
 User.init(
   {
@@ -15,22 +15,25 @@ User.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-      references: {
-        model: Contact,
-        key: 'id',
-      },
     },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: true
+      }
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8],
-      },
-    },
+        len: [4],
+      }
+    }
   },
   {
     hooks: {
@@ -45,11 +48,10 @@ User.init(
           10
         );
         return updateUserData;
-      },
+      }
     },
-
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'user',

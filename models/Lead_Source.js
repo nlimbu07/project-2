@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connections');
 
-class Lead_Source extends Model {}
+class Lead_Source extends Model {};
 
 Lead_Source.init(
   {
@@ -9,16 +9,12 @@ Lead_Source.init(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      allowNull: false,
-      references: {
-        model: 'contact.lead_source',
-        key: 'id',
-      },
+      allowNull: false
     },
     lead_source_name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
+    }
   },
   {
     sequelize,

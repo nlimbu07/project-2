@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connections');
 
-class Status extends Model {}
+class Status extends Model {};
 
 Status.init(
   {
@@ -10,15 +10,11 @@ Status.init(
       primaryKey: true,
       autoIncrement: true,
       allowNull: false,
-      references: {
-        model: 'contact.status',
-        key: 'id',
       },
-    },
     status_name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
+    }
   },
   {
     sequelize,

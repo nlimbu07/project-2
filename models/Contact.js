@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connections');
 
-class Contact extends Model {}
+class Contact extends Model {};
 
 Contact.init(
   {
@@ -10,7 +10,7 @@ Contact.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: ture,
+      autoIncrement: true,
     },
     first_name: {
       type: DataTypes.STRING,
@@ -21,7 +21,7 @@ Contact.init(
       allowNull: false,
     },
     phone: {
-      type: DataTypes.DOUBLE,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     email: {
@@ -30,7 +30,7 @@ Contact.init(
       unique: true,
       validate: {
         isEmail: true,
-      },
+      }
     },
     notes: {
       type: DataTypes.TEXT,
@@ -42,7 +42,7 @@ Contact.init(
       references: {
         model: 'status',
         key: 'id',
-      },
+      }
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -50,22 +50,22 @@ Contact.init(
       references: {
         model: 'user',
         key: 'id',
-      },
+      }
     },
     lead_source_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'lead_source',
         key: 'id',
-      },
-    },
+      }
+    }
   },
   {
     sequelize,
     timestamps: true,
     freezeTableName: true,
-    underscored: ture,
+    underscored: true,
     modelName: 'contact',
   }
 );
