@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Status } = require('../../models');
+const { User, Status, Lead_Source } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
@@ -47,7 +47,7 @@ router.put('/:id', (req, res) => {
     })
     .then(dbStatusData => {
         if (!dbStatusData) {
-            res.status(404).json({ message: 'ID not found' });
+            res.status(404).json({ message: 'Status not found' });
             return;
         }
         res.json(dbStatusData);
@@ -66,7 +66,7 @@ router.delete('/:id', (req, res) => {
     })
     .then(dbStatusData => {
         if (!dbStatusData) {
-            res.status(404).json({ message: 'ID not found' });
+            res.status(404).json({ message: 'Status not found' });
             return;
         }
         res.json(dbStatusData);
