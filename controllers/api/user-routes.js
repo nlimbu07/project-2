@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
         attributes: { exclude: ['password'] },
         include: {
             model: Contact,
-            attributes: ['id','first_name','last_name','phone','email','notes','status_id','user_id','lead_source_id','createdAt','updatedAt'],
+            attributes: ['id','first_name','last_name','phone','email','notes','status_id','user_id','lead_source_id','created_at','updated_at'],
             include: [
                 {
                     model: Status,
