@@ -3,7 +3,23 @@ const { User, Status, Lead_Source, Contact } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-    Contact.findAll()
+    Contact.findAll({
+        include: [
+            {
+            model: Status,
+            attributes: ['status_name']
+            },
+            {
+                model: Lead_Source,
+                attributes: ['lead_source_name']
+            },
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    }
+    )
     .then(dbContactData => res.json(dbContactData))
     .catch(err => {
         console.log(err);
@@ -13,7 +29,21 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     Contact.findOne({
-        where: { id: req.params.id }
+        where: { id: req.params.id },
+        include: [
+            {
+                model: Status,
+                attributes: ['status_name']
+            },
+            {
+                model: Lead_Source,
+                attributes: ['lead_source_name']
+            },
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
     })
     .then(dbContactData => {
         if (!dbContactData) {
