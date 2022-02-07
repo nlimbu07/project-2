@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connections');
 
-class Status extends Model {}
+class Lead_Source extends Model {}
 
-Status.init(
+Lead_Source.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,11 +11,11 @@ Status.init(
       autoIncrement: true,
       allowNull: false,
       references: {
-        model: 'contact.status',
+        model: 'contact.lead_source',
         key: 'id',
       },
     },
-    status_name: {
+    lead_source_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -24,8 +24,8 @@ Status.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'status',
+    modelName: 'lead_source',
   }
 );
 
-module.exports = Status;
+module.exports = Lead_Source;
