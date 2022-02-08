@@ -5,6 +5,20 @@ const { User, Status, Lead_Source, Contact } = require('../../models');
 router.get('/', (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] },
+        include: {
+            model: Contact,
+            attributes: ['id','first_name','last_name','phone','email','notes','status_id','user_id','lead_source_id','created_at','updated_at'],
+            include: [
+                {
+                    model: Status,
+                    attributes: ['status_name']
+                },
+                {
+                    model: Lead_Source,
+                    attributes: ['lead_source_name']
+                }
+            ]
+        }
     })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
@@ -16,7 +30,21 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     User.findOne({
         where: { id: req.params.id },
-        attributes: { exclude: ['password'] }
+        attributes: { exclude: ['password'] },
+        include: {
+            model: Contact,
+            attributes: ['id','first_name','last_name','phone','email','notes','status_id','user_id','lead_source_id','createdAt','updatedAt'],
+            include: [
+                {
+                    model: Status,
+                    attributes: ['status_name']
+                },
+                {
+                    model: Lead_Source,
+                    attributes: ['lead_source_name']
+                }
+            ]
+        }
     })
     .then(dbUserData => {
         if (!dbUserData) {
