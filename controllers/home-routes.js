@@ -34,10 +34,13 @@ router.get('/', (req, res) => {
     ]
 }
 )
-  .then(dbContactData => res.json(dbContactData))
+  .then(dbContactData => {
     const contacts = dbContactData.map(contact => contact.get({plain:true}));
+    console.log(contacts);
     res.render('homepage', {
       contacts
+  })
+      
       
     })
   .catch(err => {

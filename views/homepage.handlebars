@@ -1,5 +1,8 @@
-{{!-- <ol class="post-list">
+
+<ol class="post-list">
+    {{#each contacts}}
   <li>
+      <p>{{first_name}} {{last_name}} </p>
     <article class="post">
       <div class="title">
         <a href="{{post_url}}" target="_blank">{{title}}</a>
@@ -13,6 +16,7 @@
       </div>
     </article>
   </li>
-</ol> --}}
+  {{/each}}
+</ol>
 
-<p>{{First_Name}}</p>
+{{!-- <p>{{First_Name}}</p> --}}
