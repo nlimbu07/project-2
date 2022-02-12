@@ -1,4 +1,5 @@
 
+{{#if loggedIn}}
 <ol class="post-list">
     {{#each contacts}}
   <li>
@@ -14,17 +15,44 @@
           
           </h5>
       </p>
-    {{!-- <article class="post">
-      <div class="title">
-        <a href="{{post_url}}" target="_blank">{{title}}</a>
-        <span>({{post_url}})</span>
-      </div>
-      <div class="meta">
-      </div>
-    </article> --}}
-
   </li>
   {{/each}}
 </ol>
+{{else }}
 
-{{!-- <p>{{First_Name}}</p> --}}
+{{!-- Login/SignUp Form --}}
+<form class="login-form white black-text">
+    <div>
+        <label for="email-login">Email:</label>
+        <input type="text" id="email-login" />
+    </div>
+    <div>
+        <label for="password-login">Password:</label>
+        <input type="text" id="password-login" />
+    </div>
+    <div>
+        <button type="submit">Login</button>
+    </div>
+</form>
+
+<form class="signup-form white">
+  <div>
+    <label for="username-signup">Username:</label>
+    <input type="text" id="username-signup" />
+  </div>
+  <div>
+    <label for="email-signup">Email:</label>
+    <input type="text" id="email-signup" />
+  </div>
+  <div>
+    <label for="password-signup">Password:</label>
+    <input type="password" id="password-signup" />
+  </div>
+  <div>
+    <button type="submit">signup</button>
+  </div>
+</form>
+{{/if}}
+{{#unless loggedIn}}
+<script src="/public/javascript/login.js"></script>
+{{/unless}}

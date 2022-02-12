@@ -23,21 +23,14 @@
       </h1>
       <nav>
         <div class="nav-wrapper">
-
         
         {{#if loggedIn}}
-        <a href="/dashboard">Dashboard</a>
-        <button id="logout">Log Out</button>
-        {{else}}
-        <ul>
-
-        <li class="active">
-          <a href="/"><i class="medium material-icons">home</i></a>
-        </li>
-        <li class="active">
-          <a href="/login">Login</a>
-        </li>
-        </ul>
+          <ul>
+            <li class="active">
+              <a href="/"><i class="medium material-icons">home</i></a>
+            </li>
+              <button id="logout">Log Out</button>
+          </ul>
         {{/if}}
         </div>
       </nav>
@@ -65,7 +58,7 @@
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2022 Copyright Text
+            © 2022 Project 2
             <a class="grey-text text-lighten-4 right" href="#!">SLM Inc.</a>
             </div>
           </div>
