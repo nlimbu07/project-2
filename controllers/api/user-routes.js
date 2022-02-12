@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { User, Status, Lead_Source, Contact } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] },
         include: {
@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
     User.findOne({
         where: { id: req.params.id },
         attributes: { exclude: ['password'] },
@@ -104,13 +104,13 @@ router.post('/', (req, res) => {
         email: req.body.email
     })
     .then(dbUserData => {
-        // req.session.save(() => {
-        //   req.session.user_id = dbUserData.id;
-        //   req.session.username = dbUserData.username;
-        //   req.session.loggedIn = true;
+        req.session.save(() => {
+          req.session.user_id = dbUserData.id;
+          req.session.username = dbUserData.username;
+          req.session.loggedIn = true;
       
-        //   res.json(dbUserData);
-        // })
+          res.json(dbUserData);
+        })
         res.json(dbUserData)
     })
     .catch(err => {
@@ -119,7 +119,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     User.update(req.body, {
         individualHooks: true,
         where: {
@@ -139,7 +139,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     User.destroy({
         where: {
             id: req.params.id
