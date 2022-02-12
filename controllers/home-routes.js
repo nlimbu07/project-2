@@ -1,55 +1,49 @@
 const router = require('express').Router();
 const { Contact, Lead_Source, Status, User } = require('../models');
 const sequelize = require('../config/connections');
-
-// router.get('/', (req, res) => {
-//   res.render('homepage', {
-//     id: 1,
-//     post_url: 'https://handlebarsjs.com/guide/',
-//     title: 'Handlebars Docs',
-//     created_at: new Date(),
-//     vote_count: 10,
-//     comments: [{}, {}],
-//     user: {
-//       username: 'test_user'
-//     }
-//   });
-// });
+const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-  Contact.findAll({
-    include: [
-        {
-        model: Status,
-        attributes: ['status_name']
-        },
-        {
-            model: Lead_Source,
-            attributes: ['lead_source_name']
-        },
-        {
-            model: User,
-            attributes: ['username']
-        }
-    ]
-}
-)
-  .then(dbContactData => {
-    const contacts = dbContactData.map(contact => contact.get({plain:true}));
-    console.log(contacts);
-    res.render('homepage', {
-      contacts
-  })
-      
-      
+  if (req.session.loggedIn) {
+    Contact.findAll({
+      include: [
+          {
+          model: Status,
+          attributes: ['status_name']
+          },
+          {
+              model: Lead_Source,
+              attributes: ['lead_source_name']
+          },
+          {
+              model: User,
+              attributes: ['username']
+          }
+      ]
     })
-  .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-  });
+    .then(dbContactData => {
+      const contacts = dbContactData.map(contact => contact.get({plain:true}));
+      console.log(contacts);
+      res.render('homepage', {
+        contacts,
+        loggedIn: req.session.loggedIn
+      })
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+  } else {
+    res.redirect('/login');
+  }
 });
 
 router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
   res.render('login');
 });
 
