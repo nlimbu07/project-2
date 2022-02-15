@@ -7,32 +7,34 @@ router.get('/', (req, res) => {
   if (req.session.loggedIn) {
     Contact.findAll({
       include: [
-          {
+        {
           model: Status,
-          attributes: ['status_name']
-          },
-          {
-              model: Lead_Source,
-              attributes: ['lead_source_name']
-          },
-          {
-              model: User,
-              attributes: ['username']
-          }
-      ]
+          attributes: ['status_name'],
+        },
+        {
+          model: Lead_Source,
+          attributes: ['lead_source_name'],
+        },
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
     })
-    .then(dbContactData => {
-      const contacts = dbContactData.map(contact => contact.get({plain:true}));
-      console.log(contacts);
-      res.render('homepage', {
-        contacts,
-        loggedIn: req.session.loggedIn
+      .then((dbContactData) => {
+        const contacts = dbContactData.map((contact) =>
+          contact.get({ plain: true })
+        );
+        console.log(contacts);
+        res.render('homepage', {
+          contacts,
+          loggedIn: req.session.loggedIn,
+        });
       })
-    })
-    .catch(err => {
+      .catch((err) => {
         console.log(err);
         res.status(500).json(err);
-    });
+      });
   } else {
     res.redirect('/login');
   }
