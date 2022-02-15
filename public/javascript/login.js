@@ -17,7 +17,7 @@ async function loginFormHandler(event) {
       if (response.ok) {
         document.location.replace('/');
       } else {
-        alert(response.statusText);
+        alert("YOU ARE A FAILURE");
       }
     }
   }

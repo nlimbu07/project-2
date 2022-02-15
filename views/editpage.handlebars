@@ -1,0 +1,24 @@
+<form class="edit-contact-form">
+    <label class="edit-form-label" for="first-name">First Name:</label><input name="first-name" class="edit-form-input" value="{{contacts.first_name}}" />
+    <label class="edit-form-label" for="last-name">Last Name:</label><input name="last-name" class="edit-form-input" value="{{contacts.last_name}}" />
+    <label class="edit-form-label" for="phone">Phone Number:</label><input name="phone" class="edit-form-input" value="{{contacts.phone}}" />
+    <label class="edit-form-label" for="email">Email:</label><input name="email" class="edit-form-input" value="{{contacts.email}}" />
+    <label class="edit-form-label" for="notes">Notes:</label><textarea name="notes" class="edit-form-input">{{contacts.notes}}</textarea>
+    <label class="edit-form-label" for="status">Status:</label><input name="status" class="edit-form-input" value="{{contacts.status.status_name}}" />
+    <label class="edit-form-label" for="lead-source">Lead Source:</label><input name="lead-source" class="edit-form-input" value="{{contacts.lead_source.lead_source_name}}" />
+    <label class="edit-form-label" for="user">User:</label><input name="user" class="edit-form-input" value="{{contacts.user.username}}" />
+
+    <button type="submit" class="savebtn">Save</button>
+</form>
+
+
+
+{{!-- Drop Down Button
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <ul>
+        <li>Poop</li>
+    </ul>
+  </div>
+</div> --}}

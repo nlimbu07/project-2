@@ -5,13 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Lead Manager</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <!-- Compiled and minified CSS -->
+  <!-- Materialize -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!-- Compiled and minified JavaScript -->
+  <!-- Materialize -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!-- Fonts -->
+  <!-- Materialize Fonts -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
 
 </head>
 
@@ -22,43 +23,27 @@
         <a class="black-text" href="/">Simple Lead Manager<i class="large material-icons">folder_shared</i></a>
       </h1>
       <nav>
+        {{#if loggedIn}}
         <div class="nav-wrapper">
-
-          {{#if loggedIn}}
           <ul>
-            <li class="active">
-              <a href="/"><i class="medium material-icons">Home</i></a>
+            <li class="hover">
+              <a href="/"><i class="small material-icons">home</i></a>
             </li>
-            <button id="logout" class="btn_logout">Log Out</button>
+            <li class="hover">
+              <a href="/newcontact/"><i class="small material-icons">group_add</i></a>
+            </li>
+            <li class="hover" id="logout">
+              <a><i class="medium material-icons">exit_to_app</i></a>
+            </li>
           </ul>
-          {{else}}
-          <a href="/login">Login</a>
-          {{/if}}
         </div>
+        {{/if}}
       </nav>
     </header>
     <main>
       {{{ body }}}
     </main>
     <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Thanks for visiting!</h5>
-            <p class="grey-text text-lighten-4">Contacts and Information may go here.</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
         <div class="container">
           © 2022 Project 2
           <a class="grey-text text-lighten-4 right" href="#!">SLM Inc.</a>
