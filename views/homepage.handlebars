@@ -1,18 +1,10 @@
+<h1>Contacts</h1>
+
 <ol class="post-list">
   {{#each contacts}}
   <li>
     <p>
-    <h2>{{first_name}} {{last_name}}</h2>
-    <h5>
-      Phone Number: {{phone}} <br />
-      Email: {{email}} <br />
-      Notes: {{notes}} <br />
-      User Id: {{user_id}} <br />
-      Status Id: {{status_id}} <br />
-      Lead Source Id: {{lead_source_id}} <br />
-
-
-    </h5>
+    <a href="/editpage/{{id}}"><h3>{{first_name}} {{last_name}}</h3></a>
     </p>
   </li>
   {{/each}}
