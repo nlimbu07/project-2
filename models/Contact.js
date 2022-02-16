@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connections');
 
-class Contact extends Model {};
+class Contact extends Model {}
 
 Contact.init(
   {
@@ -30,7 +30,7 @@ Contact.init(
       unique: true,
       validate: {
         isEmail: true,
-      }
+      },
     },
     notes: {
       type: DataTypes.TEXT,
@@ -42,7 +42,7 @@ Contact.init(
       references: {
         model: 'status',
         key: 'id',
-      }
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -50,7 +50,7 @@ Contact.init(
       references: {
         model: 'user',
         key: 'id',
-      }
+      },
     },
     lead_source_id: {
       type: DataTypes.INTEGER,
@@ -58,8 +58,8 @@ Contact.init(
       references: {
         model: 'lead_source',
         key: 'id',
-      }
-    }
+      },
+    },
   },
   {
     sequelize,
