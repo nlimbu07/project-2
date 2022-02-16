@@ -30,19 +30,23 @@
   />
 
   <label class='edit-form-label' for='lead-source'>Lead Source:</label>
-  <input
+  {{!-- <input
     name='lead-source'
     class='edit-form-input'
     value='{{contacts.lead_source.lead_source_name}}'
-  />
-  <select class='browser-default'>
+  /> --}}
+  <select
+    name='lead-source'
+    class='browser-default'
+    value='{{contacts.lead_source.lead_source_name}}'
+  >
     <option name='lead-source' enabled selected>Choose Lead Source</option>
-    <option value='company-website'>Company Website</option>
-    <option value='facebook'>Facebook</option>
-    <option value='referral'>Referral</option>
-    <option value='self-generated'>Self Generated</option>
-    <option value='google'>Google</option>
-    <option value='digital-lead'>Digital Lead</option>
+    <option value='1'>Company Website</option>
+    <option value='2'>Facebook</option>
+    <option value='3'>Referral</option>
+    <option value='4'>Self Generated</option>
+    <option value='5'>Google</option>
+    <option value='6'>Digital Lead</option>
   </select>
 
   <br />

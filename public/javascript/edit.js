@@ -9,6 +9,11 @@ async function editFormHandler(event) {
     .value.trim();
   const phone = document.querySelector('input[name="phone"]').value.trim();
   const email = document.querySelector('input[name="email"]').value.trim();
+  const status = document.querySelector('input[name="status"]').value.trim();
+  const lead_source = document
+    .querySelector('select[name="lead-source"]')
+    .value.trim();
+  const username = document.querySelector('input[name="user"]').value.trim();
 
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
@@ -23,6 +28,9 @@ async function editFormHandler(event) {
       phone: phone,
       email: email,
       notes: notes,
+      status_id: status,
+      lead_source_id: lead_source,
+      user_id: username,
     }),
     headers: {
       'Content-Type': 'application/json',
