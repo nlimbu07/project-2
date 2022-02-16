@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
   })
     .then((dbContactData) => {
       const contacts = dbContactData.get({ plain: true });
-      console.log('edit***', contacts);
+      // console.log('edit***', contacts);
       res.render('editpage', {
         contacts,
         loggedIn: req.session.loggedIn,
