@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
         const contacts = dbContactData.map((contact) =>
           contact.get({ plain: true })
         );
-        console.log(contacts);
+        // console.log(contacts);
         res.render('homepage', {
           contacts,
           loggedIn: req.session.loggedIn,

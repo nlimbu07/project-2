@@ -9,9 +9,9 @@ async function newContactFormHandler(event) {
       .value.trim();
     const phone = document.querySelector('input[name="phone"]').value.trim();
     const email = document.querySelector('input[name="email"]').value.trim();
-    const status_id = document.querySelector('input[name="status"]').value.trim();
-    const lead_source_id = document.querySelector('input[name="lead-source"]').value.trim();
-    const user_id = document.querySelector('input[name="user"]').value.trim();
+    const status_id = document.querySelector('select[name="status_id"]').value.trim();
+    const lead_source_id = document.querySelector('select[name="lead-source_id"]').value.trim();
+    const user_id = document.querySelector('select[name="user_id"]').value.trim();
   
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1

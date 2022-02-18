@@ -85,9 +85,9 @@ router.put('/:id', withAuth, (req, res) => {
     phone: req.body.phone,
     email: req.body.email,
     notes: req.body.notes,
-    status: req.body.status,
+    status_id: req.body.status_id,
     lead_source_id: parseInt(req.body.lead_source_id, 'username'),
-    user: req.body.user,
+    user_id: req.body.user_id,
   };
   Contact.update(contact, {
     where: {
