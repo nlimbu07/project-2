@@ -4,20 +4,20 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
     Lead_Source.findAll({
-        include: {
-            model: Contact,
-            attributes: ['id','first_name','last_name','phone','email','notes','status_id','user_id','lead_source_id','createdAt','updatedAt'],
-            include: [
-                {
-                    model: User,
-                    attributes: ['username']
-                },
-                {
-                    model: Status,
-                    attributes: ['status_name']
-                }
-            ]
-        }
+        // include: {
+        //     model: Contact,
+        //     attributes: ['id','first_name','last_name','phone','email','notes','status_id','user_id','lead_source_id','createdAt','updatedAt'],
+        //     include: [
+        //         {
+        //             model: User,
+        //             attributes: ['username']
+        //         },
+        //         {
+        //             model: Status,
+        //             attributes: ['status_name']
+        //         }
+        //     ]
+        // }
     })
     .then(dbLeadSourceData => res.json(dbLeadSourceData))
     .catch(err => {
