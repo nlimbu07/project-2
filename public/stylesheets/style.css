@@ -1,5 +1,6 @@
 .container {
   border-radius: 10px;
+  padding: 15px;
 }
 
 .login-form {
@@ -15,6 +16,16 @@
 
 .button {
   margin: 5px 5px;
+}
+
+.savebtn {
+  color: white;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: blue;
+  margin-top: 10px;
 }
 
 #backdrop {
@@ -35,15 +46,44 @@ h1 {
   width: 50%;
 }
 
+.edit-contact-form {
+  margin-right: 500px;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  border-color: black;
+  padding: 10px;
+  background-color:blanchedalmond;
+  box-shadow: 15px 15px black;
+}
+
 .edit-contact-form label {
   color: black;
+  font-size: x-large;
+  border-bottom: 1px solid black;
+}
+
+.edit-form-input {
+  padding: 15px;
 }
 
 a {
   color: black;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 li {
   text-align: left;
   list-style-type: none;
+}
+
+select {
+  background-color:ivory;
+  border-radius: 5px;
+  box-shadow: 1px 1px 0px 0px;
+  color: black;
+  padding-right: 50px;
 }
