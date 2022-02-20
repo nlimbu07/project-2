@@ -1,0 +1,89 @@
+.container {
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.login-form {
+  margin-top: 20px;
+  border: 2px solid black;
+}
+
+.signup-form {
+  border: 2px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button {
+  margin: 5px 5px;
+}
+
+.savebtn {
+  color: white;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: blue;
+  margin-top: 10px;
+}
+
+#backdrop {
+  background-image: url('../images/hero-background.png');
+}
+
+h1 {
+  text-align: center;
+  font-family: monaco;
+}
+
+.section-title {
+  font-family: monaco;
+  font-size: 20px;
+  padding: 0px 50px 0px 0px;
+  text-align: center;
+  margin: 0 auto 35px auto;
+  width: 50%;
+}
+
+.edit-contact-form {
+  margin-right: 500px;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  border-color: black;
+  padding: 10px;
+  background-color:blanchedalmond;
+  box-shadow: 15px 15px black;
+}
+
+.edit-contact-form label {
+  color: black;
+  font-size: x-large;
+  border-bottom: 1px solid black;
+}
+
+.edit-form-input {
+  padding: 15px;
+}
+
+a {
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+li {
+  text-align: left;
+  list-style-type: none;
+}
+
+select {
+  background-color:ivory;
+  border-radius: 5px;
+  box-shadow: 1px 1px 0px 0px;
+  color: black;
+  padding-right: 50px;
+}

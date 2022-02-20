@@ -1,0 +1,32 @@
+<form class="edit-contact-form">
+    <label class="edit-form-label" for="first-name">First Name:</label>
+    <input name="first-name" class="edit-form-input" />
+
+    <label class="edit-form-label" for="last-name">Last Name:</label>
+    <input name="last-name" class="edit-form-input" />
+
+    <label class="edit-form-label" for="phone">Phone Number:</label>
+    <input name="phone" class="edit-form-input" />
+
+    <label class="edit-form-label" for="email">Email:</label>
+    <input name="email" class="edit-form-input" />
+
+    <label class="edit-form-label" for="notes">Notes:</label>
+    <textarea name="notes" class="edit-form-input"></textarea>
+
+    <label class="edit-form-label" for="status_id">Status:</label>
+    <select name="status_id" class='status-select browser-default' id='status-select'></select>
+
+    <label class="edit-form-label" for="lead-source_id">Lead Source:</label>
+    <select name="lead-source_id" class='lead-source-select browser-default' id='lead-source-select'></select>
+
+    <label class="edit-form-label" for="user_id">User:</label>
+    <select name="user_id" class='user-select browser-default' id='user-select'></select>
+
+    <button type="submit" class="savebtn">Save</button>
+</form>
+
+<script src="/javascript/add.js"></script>
+<script src='/javascript/leadsource.js'></script>
+<script src='/javascript/user.js'></script>
+<script src='/javascript/status.js'></script>
