@@ -16,17 +16,18 @@
 
   <label class='edit-form-label' for='status_id'>Status:</label>
   <select name='status_id' class='status-select browser-default' id='status-select'>
-    <option enabled selected>{{contacts.status.status_name}}</option>
+    <option enabled selected value='{{contacts.status_id}}'>{{contacts.status.status_name}}</option>
   </select>
 
   <label class='edit-form-label' for='lead-source_id'>Lead Source:</label>
   <select name='lead-source_id' class='lead-source-select browser-default' id='lead-source-select'>
-    <option enabled selected>{{contacts.lead_source.lead_source_name}}</option>
+    <option enabled selected value='{{contacts.lead_source_id}}'>{{contacts.lead_source.lead_source_name}}
+    </option>
   </select>
 
   <label class='edit-form-label' for='user_id'>User:</label>
   <select name='user_id' class='user-select browser-default' id='user-select'>
-    <option enabled selected>{{contacts.user.username}}</option>
+    <option enabled selected value='{{contacts.user_id}}'>{{contacts.user.username}}</option>
   </select>
 
   <button type='submit' class='savebtn'>Save</button>
