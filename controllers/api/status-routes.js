@@ -57,7 +57,7 @@ router.get('/:id', withAuth, (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     Status.create({
         status_name: req.body.status_name
     })

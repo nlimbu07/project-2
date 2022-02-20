@@ -57,7 +57,7 @@ router.get('/:id', withAuth, (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     Lead_Source.create({
         lead_source_name: req.body.lead_source_name
     })
